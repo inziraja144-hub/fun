@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Be My Valentine ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      text-align: center;
+      color: white;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.2);
+      padding: 40px;
+      border-radius: 20px;
+    }
+
+    button {
+      margin: 15px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .yes { background: #00c853; color: white; }
+    .no { background: #d50000; color: white; }
+
+    #message {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Will you be my Valentine? ❤️</h1>
+
+    <button class="yes" onclick="yes()">YES</button>
+    <button class="no" onmouseover="moveNo()">NO</button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function yes() {
+      document.getElementById("message").innerText =
+        "Yayyy ❤️ Best decision ever. Love you!";
+    }
+
+    function moveNo() {
+      const btn = document.querySelector(".no");
+      btn.style.position = "absolute";
+      btn.style.top = Math.random()*80 + "%";
+      btn.style.left = Math.random()*80 + "%";
+    }
+  </script>
+</body>
+</html
