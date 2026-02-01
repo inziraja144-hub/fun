@@ -2,20 +2,18 @@ import streamlit as st
 from pathlib import Path
 import streamlit.components.v1 as components
 
-# Page config
 st.set_page_config(
     page_title="Be My Valentine ❤️",
     page_icon="❤️",
     layout="centered"
 )
 
-# Read HTML file
-html_file = Path("index.html")
-html_content = html_file.read_text(encoding="utf-8")
+# Absolute path to current directory
+BASE_DIR = Path(__file__).parent
+HTML_FILE = BASE_DIR / "index.html"
 
-# Render HTML
-components.html(
-    html_content,
-    height=600,
-    scrolling=False
-)
+if not HTML_FILE.exists():
+    st.error("❌ index.html not found. Make sure it is in the same folder as app.py")
+else:
+    html_content = HTML_FILE.read_text(encoding="utf-8")
+    components.html(html_content, height=650, scrolling=False)
