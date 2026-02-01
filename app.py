@@ -10,10 +10,11 @@ st.set_page_config(
 
 # Absolute path to current directory
 BASE_DIR = Path(__file__).parent
-HTML_FILE = BASE_DIR / "index.html"
+HTML_FILE = BASE_DIR / "index .html"
 
 if not HTML_FILE.exists():
     st.error("❌ index.html not found. Make sure it is in the same folder as app.py")
 else:
     html_content = HTML_FILE.read_text(encoding="utf-8")
     components.html(html_content, height=650, scrolling=False)
+
